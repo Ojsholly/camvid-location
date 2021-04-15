@@ -82,14 +82,15 @@ class AuthController extends Controller
 
         $user = User::where('phone', $request->phone);
 
+        $verify_user = $user
+            ->update(['verified_at' => now()->toDateTimeString()]);
+
         $response = [
             'status' => 'success',
             'message' => 'OTP successfully confirmed',
             'user' => $user->first()
         ];
 
-        $verify_user = $user
-            ->update(['verified_at' => now()->toDateTimeString()]);
 
         return response()->json($response, 200);
     }
