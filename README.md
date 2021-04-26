@@ -1,4 +1,4 @@
-# Virtual Wallet System
+# OTP Authentication System
 
 ## Project Description
 
